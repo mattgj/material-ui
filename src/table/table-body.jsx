@@ -294,8 +294,8 @@ const TableBody = React.createClass({
 
     if (this.props.selectable) {
       // Prevent text selection while selecting rows.
-      window.getSelection().removeAllRanges();
-      this._processRowSelection(e, rowNumber);
+      //window.getSelection().removeAllRanges();
+      //this._processRowSelection(e, rowNumber);
     }
   },
 
