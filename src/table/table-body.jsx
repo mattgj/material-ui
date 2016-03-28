@@ -295,11 +295,16 @@ const TableBody = React.createClass({
     if (this.props.selectable) {
       // Prevent text selection while selecting rows.
       //window.getSelection().removeAllRanges();
-      //this._processRowSelection(e, rowNumber);
+      this._processRowSelection(e, rowNumber);
     }
   },
 
   _processRowSelection(e, rowNumber) {
+
+    if(e.target.tagName.toLowerCase() != 'input' || e.target.getAttribute('type') != 'checkbox') {
+      return;
+    }
+
     let selectedRows = this.state.selectedRows;
 
     if (e.shiftKey && this.props.multiSelectable && selectedRows.length) {
