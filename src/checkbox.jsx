@@ -181,6 +181,10 @@ const Checkbox = React.createClass({
     this.setState({switched: newSwitched});
   },
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.props.checked != nextProps.checked;
+  },
+
   render() {
     let {
       iconStyle,
